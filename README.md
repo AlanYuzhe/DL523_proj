@@ -38,6 +38,9 @@ mkdir model
 
 mkdir log
 
+### Train
+You can run the cnninpainting.py file directly to start the training of the cnn model, remember to check that the address of the image file in it corresponds to your address.
+
 ### Test Models
 First model with implemented PD-GAN
 We provide you with the trained model (https://drive.google.com/file/d/1vDjVcrQ9Pn1J5tVCbUozw7iNfsxQz4sK/view?usp=sharing), which you can unzip into the model folder and run the test.py file to test the performance of the model (please set your own folder directory in test.py)
