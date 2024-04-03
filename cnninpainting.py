@@ -30,24 +30,20 @@ def load_celeba_images_and_labels(image_dir, label_file):
     image_paths = [os.path.join(image_dir, filename) for filename in os.listdir(image_dir)]
     images = np.array([np.array(Image.open(path).resize((64, 64))) for path in image_paths])
 
-    # Load labels (this will need to be adapted based on how you want to use the labels)
-    # For demonstration, this just loads a list of filenames. You'll need to parse the actual labels.
+    # Load labels
     with open(label_file, 'r') as file:
         labels = file.readlines()
-    
-    # Convert labels to a more usable format here, e.g., to_categorical if you're using labels for classification
 
     return images, labels
 
 # Load data
 x_train, y_train = load_celeba_images_and_labels('CelebA/CelebA/Img/img_align_celeba', 'CelebA/CelebA/Anno/list_attr_celeba.txt')
-x_test, y_test = x_train, y_train  # This is just an example; split your data accordingly
+x_test, y_test = x_train, y_train 
 
 # Normalize and convert
 x_train = (x_train / 255.0).astype(np.float32)
 x_test = (x_test / 255.0).astype(np.float32)
 
-# Now you can correctly print min and max values
 print("image range is {}, {}".format(np.min(x_test), np.max(x_test)))
 print("new image range is {}, {}".format(np.min(x_test), np.max(x_test)))
 def mask(X, coords):
