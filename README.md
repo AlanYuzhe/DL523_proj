@@ -1,4 +1,4 @@
-# Human Face Impainting
+# Human Face Inpainting
 
 This project focuses on working with a dataset of images, applying masks for inpainting tasks, and leveraging pretrained encoder and decoder models for image processing. The goal is to provide an easy-to-follow setup for researchers or developers interested in experimenting with image manipulation and enhancement techniques.
 
@@ -38,3 +38,21 @@ mkdir model
 
 mkdir log
 
+### Test Models
+First model with implemented PD-GAN
+We provide you with the trained model (https://drive.google.com/file/d/1vDjVcrQ9Pn1J5tVCbUozw7iNfsxQz4sK/view?usp=sharing), which you can unzip into the model folder and run the test.py file to test the performance of the model (please set your own folder directory in test.py)
+
+Second model with CNN network
+You can run the image_inpainting.py file directly after resetting the test image directory, and it will generate the results for you directly.
+
+### Acknowledgement
+We reuse the following codebases:
+The code and model of Pretrained Encoder-Decoder for building PD-GAN are adapted from the following sources:
+The code for data preprocessing:
+https://github.com/RenYurui/StructureFlow/blob/master/src/data.py
+
+The code and model of Pretrained Encoder-Decoder: https://github.com/naoto0804/pytorch-inpainting-with-partial-conv/blob/master/net.py
+https://github.com/KumapowerLIU/PD-GAN/blob/main/models/network/pconv.py
+
+The code for loss function using pretrained VGG-16: https://github.com/KumapowerLIU/Rethinking-Inpainting-MEDFE/blob/master/models/loss.py
+The code for multi-scale discriminator: https://github.com/yuan-yin/UNISST
