@@ -28,7 +28,7 @@ For the mask dataset, essential for the inpainting tasks, use the link below:
 
 Access pretrained models for your encoder and decoder through this Google Drive link:
 
-- [Pretrained Models](https://drive.google.com/drive/folders/1o9reT5_lFzGKBsrLlvck545nNInIAlPe)
+- [Pretrained Models]([https://drive.google.com/drive/folders/1o9reT5_lFzGKBsrLlvck545nNInIAlPe](https://drive.google.com/file/d/1nPVW9eMBTHQ4SYuYPfIRgRSFAvjKnmVP/view?usp=sharing)
 
 ### Setup
 
