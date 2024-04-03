@@ -34,6 +34,7 @@ Access pretrained models for your encoder and decoder through this Google Drive 
 
 After downloading the datasets and models, create folders to store your training logs and models by running the following commands in your terminal:
 
-mkdir model
-mkdir log
+mkdir model.
+
+mkdir log.
 
