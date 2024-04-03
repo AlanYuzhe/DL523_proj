@@ -51,22 +51,17 @@ x_test = (x_test / 255.0).astype(np.float32)
 print("image range is {}, {}".format(np.min(x_test), np.max(x_test)))
 print("new image range is {}, {}".format(np.min(x_test), np.max(x_test)))
 def mask(X, coords):
-    # 根据给定坐标修改蒙版区域，确保遮盖正确的图像部分
     x0, y0, x1, y1 = coords
-    # 注意这里的索引顺序，确保它们匹配(height, width, channels)格式
     X[:, y0:y1, x0:x1, :] = 0
     return X
 
-# 根据您的图像尺寸调整蒙版坐标。这里假设您想要遮盖图像中的一个小区域
-# 由于图像被调整到了64x64，确保蒙版坐标在这个尺寸范围内
-masked_x_train = mask(np.copy(x_train), (16, 2, 30, 30))  # 调整坐标以适应64x64图像
-masked_x_test = mask(np.copy(x_test), (16, 2, 30, 30))  # 同上
 
-# 这里的坐标(16, 2, 30, 30)是示例，您需要根据实际情况调整
+masked_x_train = mask(np.copy(x_train), (16, 2, 30, 30))  
+masked_x_test = mask(np.copy(x_test), (16, 2, 30, 30))  
 from tensorflow.keras.layers import Input, Conv2D, MaxPooling2D, UpSampling2D
 from tensorflow.keras.models import Model
 
-def create_cnn_model(input_shape=(64, 64, 3)):  # 修改输入尺寸以匹配64x64图像
+def create_cnn_model(input_shape=(64, 64, 3)):  
     inputs = Input(input_shape)
 
     x = Conv2D(32, (3, 3), activation='relu', padding='same')(inputs)
@@ -110,16 +105,13 @@ batch_size=256
 epochs = 30
 model_save_path = 'model1/cnnmodel'
 
-# 确保目标文件夹存在，如果不存在则创建
 if not os.path.exists(model_save_path):
     os.makedirs(model_save_path)
 
-# 训练模型
 with tf.device('/CPU:0'):
     history = model.fit(masked_x_train, x_train, batch_size=batch_size, epochs=epochs, validation_data=(masked_x_val, x_val))
 
-# 保存模型
-model_save_full_path = os.path.join(model_save_path, 'my_model.h5')  # 指定保存文件的名称
+model_save_full_path = os.path.join(model_save_path, 'my_model.h5')  
 model.save(model_save_full_path)
 
 print(f'Model saved to {model_save_full_path}')
