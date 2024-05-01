@@ -46,6 +46,7 @@ First model with implemented PD-GAN
 We provide you with the trained model (https://drive.google.com/file/d/1vDjVcrQ9Pn1J5tVCbUozw7iNfsxQz4sK/view?usp=sharing), which you can unzip into the model folder and run the test.py file to test the performance of the model (please set your own folder directory in test.py)
 
 Second model with CNN network
+different models in https://drive.google.com/file/d/1ups1x25f6pYj04bowq6GcA631WS_0cci/view?usp=sharing,
 You can run the image_inpainting.py file directly after resetting the test image directory, and it will generate the results for you directly.
 
 ### Acknowledgement:
