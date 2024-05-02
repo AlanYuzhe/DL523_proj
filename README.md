@@ -51,7 +51,9 @@ We provide you with the trained model (https://drive.google.com/file/d/1vDjVcrQ9
 Second model with CNN network
 different models in https://drive.google.com/file/d/1ups1x25f6pYj04bowq6GcA631WS_0cci/view?usp=sharing,
 You can run the image_inpainting.py file directly after resetting the test image directory, and it will generate the results for you directly.
-
+### Introduction of all files:
+1.SPDNorm.py: Created a normalization method specifically for dealing with symmetric positive definite matrices
+2.blocks:
 ### Acknowledgement:
 We reuse the following codebases:
 The code and model of Pretrained Encoder-Decoder for building PD-GAN are adapted from the following sources:
