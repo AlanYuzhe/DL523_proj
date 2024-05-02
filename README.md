@@ -38,8 +38,11 @@ mkdir model
 
 mkdir log
 
-### Train:
+### Train CNN model:
 You can run the cnninpainting.py file directly to start the training of the cnn model, remember to check that the address of the image file in it corresponds to your address.
+
+### Train PD-GAN model:
+You can run the train.py file directly to start the training of the PD-GAN model, remember to check that the address of the image file in it corresponds to your address.
 
 ### Test Models:
 First model with implemented PD-GAN
