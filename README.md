@@ -64,7 +64,7 @@ You can run the image_inpainting.py file directly after resetting the test image
 
 6.image_inpainting.py:test then model trained by cnninpainting.py
 
-7.pd_gan.py: This code defines a generator with a discriminator for PG-GAN 
+7.pd_gan.py: This code defines a generator with a discriminator for PD-GAN 
 
 8.pretrained_cnn.py and pretrained_loss.py: These two pieces of code provide a pre-trained cnn model and a pre-trained loss function for image preprocessing, respectively.
 
