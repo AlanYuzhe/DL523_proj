@@ -7,6 +7,8 @@ from pd_gan import PDGANGenerator, PDGANDiscriminator
 from pretrained_loss import GANLoss, Diversityloss, PerceptualLoss, TVloss
 from tqdm import tqdm
 from torch.nn import init
+import torch_optimizer as optim
+
 def save_img(tensor, name):
     npimg = (np.transpose(tensor, (1,2,0)) + 1.0) / 2.0 * 255
     npimg =  np.minimum(np.maximum(npimg, 0), 255).astype(np.uint8)
@@ -107,7 +109,8 @@ if __name__ == "__main__":
     lr = 0.001
     current_lr = lr
     # Optimizer
-    generator_optimizer = torch.optim.Adam(generator.parameters(), lr=0.0005, betas=(0.5, 0.999))
+    generator_optimizer = optim.Nadam(generator.parameters(), lr=0.0005, betas=(0.5, 0.999))
+    # generator_optimizer = torch.optim.Adam(generator.parameters(), lr=0.0005, betas=(0.5, 0.999))
     discriminator_optimizer = torch.optim.Adam(discriminator.parameters(), lr=0.002, betas=(0.5, 0.999))
     l1_loss = torch.nn.L1Loss()
     for epoch in range(epochs):
