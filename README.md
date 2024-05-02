@@ -58,7 +58,13 @@ You can run the image_inpainting.py file directly after resetting the test image
 
 3.cnninpainting.py: Built the cnn model, trained the model and saved it locally
 
-4.data.py:
+4.data.py: Pre-processed image data, customized loading, pre-processing and enhancement of image data
+
+5.diffusion.py: Created diffusion model, trained the model and saved it locally
+
+6.image_inpainting.py:test then model trained by cnninpainting.py
+
+7.pd_gan.py: 
 ### Acknowledgement:
 We reuse the following codebases:
 The code and model of Pretrained Encoder-Decoder for building PD-GAN are adapted from the following sources:
