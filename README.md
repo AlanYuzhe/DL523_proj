@@ -66,7 +66,15 @@ You can run the image_inpainting.py file directly after resetting the test image
 
 7.pd_gan.py: This code defines a generator with a discriminator for PG-GAN 
 
-8.pretrained_cnn.py:
+8.pretrained_cnn.py and pretrained_loss.py: These two pieces of code provide a pre-trained cnn model and a pre-trained loss function for image preprocessing, respectively.
+
+9.psnr.py:This code calculates the PSNR of the repaired image and the original image and is used to compare the quality of the repair
+
+10.spdblock.py:
+
+11.test.py:This code imports the trained model and fixes the masked image
+
+12.train.py: This code imports the dataset and initiates the training of the PD_GAN model.
 ### Acknowledgement:
 We reuse the following codebases:
 The code and model of Pretrained Encoder-Decoder for building PD-GAN are adapted from the following sources:
